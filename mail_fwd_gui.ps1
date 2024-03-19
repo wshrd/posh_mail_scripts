@@ -7,7 +7,7 @@ $LogPath = "Path:\to\log\dir\"
 function WriteLog($LogString) {
     $Stamp = (Get-Date).toString("yyyy/MM/dd HH:mm:ss")
     $LogMessage = "$Stamp $LogString"
-    $LogMessage | Out-File -FilePath $LogPath+$LogFile -Append -Encoding utf8
+    $LogMessage | Out-File -FilePath $LogPath$LogFile -Append -Encoding utf8
     }
 #Exit on error function
 function ExitErr {

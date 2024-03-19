@@ -1,12 +1,12 @@
 Import-Module Microsoft.PowerShell.ConsoleGuiTools
 #Set log file path
 $Logfile = "logfile.log"
-$LogPath = "Path:\to\log\dir\"
+$LogPath = "/Path/to/log/dir/"
 #Write log function
 function WriteLog($LogString) {
     $Stamp = (Get-Date).toString("yyyy/MM/dd HH:mm:ss")
     $LogMessage = "$Stamp $LogString"
-    $LogMessage | Out-File -FilePath $LogPath+$LogFile -Append -Encoding utf8
+    $LogMessage | Out-File -FilePath $LogPath$LogFile -Append -Encoding utf8
     }
 #Exit on error function
 function ExitErr {

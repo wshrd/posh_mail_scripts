@@ -7,10 +7,10 @@ $LogPath = "Path:\to\logfile\"
 function WriteLog($LogString) {
     $Stamp = (Get-Date).toString("yyyy/MM/dd HH:mm:ss")
     $LogMessage = "$Stamp $LogString"
-    $LogMessage | Out-File -FilePath $LogPath+$LogFile -Append -Encoding utf8
+    $LogMessage | Out-File -FilePath $LogPath$LogFile -Append -Encoding utf8
     }
 #Get User list from OU
-$DisableUsers = Get-ADUser -SearchBase ‘OU=ВыгрузитьПЯ,OU=Уволенные,DC=DOMAIN,DC=LOCAL’ -filter *
+$DisableUsers = Get-ADUser -SearchBase ‘OU=Выгрузить,OU=Уволенные,DC=DOMAIN,DC=LOCAL’ -filter *
 #Declare a variable to combine multiple export requests.
 $BatchName = 'ExportMailRequest'
 #Create export paths
